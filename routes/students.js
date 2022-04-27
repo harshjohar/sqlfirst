@@ -1,9 +1,11 @@
 const express = require('express');
+const fs = require('fs')
 const router = express.Router();
 const db = require('../db');
 
 router.get('/all', (req, res)=> {
-    db.connection.query('SELECT * FROM STUDENTS', function(error, results, fields) {
+    const query = fs.readFileSync('./sql/queries/all.sql').toString();
+    db.connection.query(query, function(error, results, fields) {
         if(error) {
             throw error;
         }
