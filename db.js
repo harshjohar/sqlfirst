@@ -6,9 +6,9 @@ var connection = sql.createConnection({
     database: "school",
 });
 const connectToSQL = () => {
-    connection.connect(()=> {
-        console.log("Connected to db")
+    connection.connect(() => {
+        console.log("Connected to db");
     });
 };
 
-module.exports = {connectToSQL, connection};
+module.exports = { connectToSQL, connection };
